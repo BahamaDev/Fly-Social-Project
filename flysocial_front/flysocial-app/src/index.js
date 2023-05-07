@@ -6,8 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const clientId =
-  "897768674151-htcdj4vvf6upj92fem3q33hl86fe414b.apps.googleusercontent.com";
+const clientId = process.env.REACT_APP_GOOGLE_API_TOKEN;
 root.render(
   <Router>
     {" "}

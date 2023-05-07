@@ -1,16 +1,20 @@
 import React from "react";
-import { GoogleLogin } from "@react-oauth/google";
+import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import shareVideo from "../assets/share.mp4";
-import logo from "../assets/logo.png";
+
 import logowhite from "../assets/logowhite.png";
 
 const Login = () => {
-  console.log(GoogleLogin);
-  const responseGoogle = (response) => {
-    console.log(response);
+  const onSuccess = (res) => {
+    console.log("LOGIN SUCCESS.", res);
   };
+
+  const onFailure = (res) => {
+    console.log("LOGIN FAILED", res);
+  };
+  const clientId = process.env.REACT_APP_GOOGLE_API_TOKEN;
 
   return (
     <>
@@ -32,20 +36,13 @@ const Login = () => {
 
             <div className='shadow-2xl'>
               <GoogleLogin
-                clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
-                render={(renderProps) => {
-                  <button
-                    type='button'
-                    className='bg-mainColor'
-                    onClick={renderProps.onClick}
-                    disabled={renderProps.disabled}
-                  >
-                    <FcGoogle className='mr-4' />
-                  </button>;
-                }}
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy='single_host_origin'
+                clientId={clientId}
+                buttonText='Login'
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={"single_host_origin"}
+                scope={""}
+                isSignedin={true}
               />
             </div>
           </div>
