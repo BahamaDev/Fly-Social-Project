@@ -3,12 +3,35 @@ import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import shareVideo from "../assets/share.mp4";
-
+import jwt_decode from "jwt-decode";
 import logowhite from "../assets/logowhite.png";
+import { client } from "../client";
 
 const Login = () => {
+  const navigate = useNavigate();
   const onSuccess = (res) => {
     console.log("LOGIN SUCCESS.", res);
+
+    // Sends the response credential to local Storage
+    localStorage.setItem("user", JSON.stringify(res));
+
+    // Decodes the respose token so that you can read data.
+    const credential = res.credential;
+    const decoded = jwt_decode(credential);
+    console.log(decoded);
+    console.log(decoded.picture);
+
+    // Object createde for Sanity Client Side (below).
+    const doc = {
+      _id: "decoded.iat",
+      _type: "user",
+      userName: decoded.name,
+      image: decoded.picture,
+    };
+    console.log({ doc });
+
+    // If the user does not already exist, this creates them in Sanity database then redirects the to the home page.
+    client.createIfNotExists(doc).then(() => navigate("/", { replace: true }));
   };
 
   const onFailure = (res) => {
