@@ -12,18 +12,18 @@ const Login = () => {
   const onSuccess = (res) => {
     console.log("LOGIN SUCCESS.", res);
 
-    // Sends the response credential to local Storage
-    localStorage.setItem("user", JSON.stringify(res));
-
     // Decodes the respose token so that you can read data.
     const credential = res.credential;
     const decoded = jwt_decode(credential);
     console.log(decoded);
     console.log(decoded.picture);
 
+    // Sends the response credential to local Storage
+    localStorage.setItem("user", JSON.stringify(decoded));
+
     // Object createde for Sanity Client Side (below).
     const doc = {
-      _id: "decoded.iat",
+      _id: decoded.sub,
       _type: "user",
       userName: decoded.name,
       image: decoded.picture,
