@@ -20,6 +20,7 @@ const Login = () => {
 
     // Sends the response credential to local Storage
     localStorage.setItem("user", JSON.stringify(decoded));
+    console.log(decoded.sub);
 
     // Object createde for Sanity Client Side (below).
     const doc = {
