@@ -22,7 +22,7 @@ const Login = () => {
     localStorage.setItem("user", JSON.stringify(decoded));
     console.log(decoded.sub);
 
-    // Object createde for Sanity Client Side (below).
+    // Object created for Sanity Client Side (below).
     const doc = {
       _id: decoded.sub,
       _type: "user",

@@ -20,8 +20,15 @@ const Home = () => {
       ? JSON.parse(localStorage.getItem("user"))
       : localStorage.clear();
 
+  console.log("User info from Storage", userInfo.sub);
+
   useEffect(() => {
-    const query = userQuery(userInfo?._id);
+    // const query = userQuery(userInfo?._id);
+    const query = userQuery(userInfo?.sub);
+
+    console.log(query);
+
+    userInfo && console.log("User on load", userInfo.sub);
 
     client.fetch(query).then((data) => {
       console.log("Data at", data);
