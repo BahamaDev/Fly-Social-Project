@@ -14,10 +14,14 @@ const Feed = () => {
     // If there is a category Id fetch the data using that as the argument and query parameter.
     if (categoryId) {
       const query = searchQuery(categoryId);
-      client.fetch(query).then((data) => {
-        setPins(data);
-        setLoading(false);
-      });
+
+      client.fetch(query).then(
+        (data) => {
+          setPins(data);
+          setLoading(false);
+        },
+        [categoryId]
+      );
     } else {
       client.fetch(feedQuery).then((data) => {
         setPins(data);

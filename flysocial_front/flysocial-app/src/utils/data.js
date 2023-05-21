@@ -1,7 +1,8 @@
 // Gets user data from Sanity.
 
 export const userQuery = (userId) => {
-  const query = `*[_type == "user" && id == '${userId}']`;
+  const query = `*[_type == "user" && _id == '${userId}']`;
+  console.log("Query submited with ", userId);
   return query;
 };
 
@@ -9,10 +10,11 @@ export const userQuery = (userId) => {
 export const searchQuery = (searchTerm) => {
   const query = `*[_type == "pin" && title match '${searchTerm}*' || category match] '${searchTerm}*' || about match '${searchTerm}*']
   
-  {image
-    {asset-> {
+  {
+    image {
+      asset -> {
       url
-    
+
     }
   },
 
@@ -36,7 +38,7 @@ image
   return query;
 };
 
-export const feedQuery = `*[_type == 'pin]| order(_createAt desc) {
+export const feedQuery = `*[_type == 'pin'] | order(_createAt desc) {
 
   {image
     {asset-> {

@@ -23,16 +23,16 @@ const Home = () => {
   console.log("User info from Storage", userInfo.sub);
 
   useEffect(() => {
-    // const query = userQuery(userInfo?._id);
-    const query = userQuery(userInfo?.sub);
+    const query = userQuery(userInfo.sub);
 
-    console.log(query);
+    // console.log(query);
 
-    userInfo && console.log("User on load", userInfo.sub);
+    // userInfo && console.log("User on load", userInfo.sub);
 
     client.fetch(query).then((data) => {
-      console.log("Data at", data);
+      // console.log("Data at", data);
       setUser(data[0]);
+      console.log(data[0]);
     });
   }, []);
 
@@ -59,7 +59,7 @@ const Home = () => {
             </Link>
 
             <Link to={`user-profile/${user?._id}`}>
-              <img src={user?._image} alt='user Image' className='w-28' />
+              <img src={user?.image} alt='user Image' className='w-28' />
             </Link>
           </div>
         </div>
