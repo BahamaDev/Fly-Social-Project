@@ -1,6 +1,8 @@
 import React from "react";
+// import Masonry from "react-masonry-css";
 import Masonry from "react-masonry-css";
 import Pin from "./Pin";
+import Dede from "./Dede";
 
 const breakpointObj = {
   default: 4,
@@ -12,15 +14,21 @@ const breakpointObj = {
 };
 
 const MasonryLayout = ({ pins }) => {
+  console.log(pins);
+
   return (
     <>
+      {" "}
+      {/* Hello from MasonryLayout */}
+      {/* <Dede pins={pins} /> */}
       <Masonry
         className='flex animate-slide-fwd'
         breakpointCols={breakpointObj}
       >
-        {pins?.map((pin) => {
-          <Pin key={pin._id} pin={pin} className='w-max' />;
-        })}
+        {pins.map((pin) => (
+          <Pin key={pin._id} pin={pin} className='w-max' />
+        ))}
+        {/* <div>Hello from Masony Layout</div> */}
       </Masonry>
     </>
   );

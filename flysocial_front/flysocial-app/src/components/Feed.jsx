@@ -12,25 +12,26 @@ const Feed = () => {
 
   useEffect(() => {
     // If there is a category Id fetch the data using that as the argument and query parameter.
+    setLoading(true);
+    console.log(categoryId);
     if (categoryId) {
       const query = searchQuery(categoryId);
 
-      client.fetch(query).then(
-        (data) => {
-          setPins(data);
-          setLoading(false);
-        },
-        [categoryId]
-      );
+      client.fetch(query).then((data) => {
+        console.log(data);
+        setPins(data);
+        setLoading(false);
+      });
     } else {
       client.fetch(feedQuery).then((data) => {
+        console.log(data);
         setPins(data);
         setLoading(false);
       });
     }
   }, [categoryId]);
   if (loading) return <Spinner message='Updating your Feed!' />;
-  return <div> {pins && <MasonryLayout pins={pins} />} </div>;
+  return <div> {pins && <MasonryLayout pins={pins} />} Feed</div>;
 };
 
 export default Feed;
