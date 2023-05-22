@@ -8,6 +8,7 @@ import { client } from "../client";
 import logo from "../assets/logo.png";
 import Pins from "./Pins";
 import { userQuery } from "../utils/data";
+import { fetchUser } from "../utils/fetchUser";
 
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
@@ -15,10 +16,7 @@ const Home = () => {
   const scrollRef = useRef(null);
 
   //Checks local storage for user.  If the user exists it parses and assigns. If not, it clears local storage.
-  const userInfo =
-    localStorage.getItem("user") !== "undefined"
-      ? JSON.parse(localStorage.getItem("user"))
-      : localStorage.clear();
+  const userInfo = fetchUser();
 
   console.log("User info from Storage", userInfo.sub);
 
