@@ -46,7 +46,7 @@ const Home = () => {
           <Sidebar user={user && user} />
         </div>
         <div className='flex md:hidden flex-row'>
-          <div className='p-4 w-full flex justify-between justify-items-center shadow-md'>
+          <div className='p-2 w-full flex flex-row justify-between items-center shadow-md'>
             <HiMenu
               fontSize={40}
               className='cursor-pointer'
@@ -60,21 +60,20 @@ const Home = () => {
               <img src={user?.image} alt='user Image' className='w-28' />
             </Link>
           </div>
-        </div>
-
-        {/* Toggle Sidebar */}
-        {toggleSidebar && (
-          <div className='fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in'>
-            <div className='absolute w-full flex justify-end items-center p-2'>
-              <AiFillCloseCircle
-                fontSize={30}
-                className='cursor-pointer'
-                onClick={() => setToggleSidebar(false)}
-              />
+          {/* Toggle Sidebar */}
+          {toggleSidebar && (
+            <div className='fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in'>
+              <div className='absolute w-full flex justify-end items-center p-2'>
+                <AiFillCloseCircle
+                  fontSize={30}
+                  className='cursor-pointer'
+                  onClick={() => setToggleSidebar(false)}
+                />
+              </div>
+              <Sidebar user={user && user} closeToggle={setToggleSidebar} />
             </div>
-            <Sidebar user={user && user} closeToggle={setToggleSidebar} />
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Scrolling Menu */}
         <div className='pb-2 flex-1 h-screen overflow-y-scroll' ref={scrollRef}>
