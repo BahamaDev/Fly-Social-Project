@@ -49,6 +49,7 @@ const CreatePin = ({ user }) => {
     }
   };
 
+  // If all of the fields are satified then create a the info / do that is sent to Sanity, creating the new pin.
   const savePin = () => {
     if (title && about && destination && imageAsset?._id && category) {
       const doc = {

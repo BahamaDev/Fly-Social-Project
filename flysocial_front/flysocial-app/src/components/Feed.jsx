@@ -17,16 +17,17 @@ const Feed = () => {
       const query = searchQuery(categoryId);
 
       client.fetch(query).then((data) => {
-        console.log(data);
+        // console.log(data);
         setPins(data);
         setLoading(false);
       });
     } else {
+      // This query fetches all pins for that user.
       client.fetch(feedQuery).then((data) => {
         console.log(data);
         setPins(data);
         setLoading(false);
-        console.log(loading);
+        // console.log(loading);
       });
     }
   }, [categoryId]);

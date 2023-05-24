@@ -14,7 +14,7 @@ const breakpointObj = {
 };
 
 const MasonryLayout = ({ pins }) => {
-  console.log(pins);
+  // console.log(pins);
 
   return (
     <>
