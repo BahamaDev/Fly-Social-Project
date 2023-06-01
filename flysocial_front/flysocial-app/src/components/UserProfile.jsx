@@ -5,12 +5,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AiOutlineLogout } from "react-icons/ai";
 import { googleLogout } from "@react-oauth/google";
 import {
-  userCreatePinsQuery,
+  userCreatedPinsQuery,
   userQuery,
   userSavedPinsQuery,
 } from "../utils/data";
 import { client } from "../client";
-import { MasonryLayout } from "./MasonryLayout";
+import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 
 const UserProfile = ({}) => {
@@ -45,6 +45,23 @@ const UserProfile = ({}) => {
       setUser(data[0]);
     });
   }, [userId]);
+
+  // UseEffect for determining whether an items is save or not.
+  useEffect(() => {
+    if (text === "created") {
+      const createdPinsQuery = userCreatedPinsQuery(userId);
+
+      client.fetch(createdPinsQuery).then((data) => {
+        setPins(data);
+      });
+    } else {
+      const savedPinsQuery = userSavedPinsQuery(userId);
+
+      client.fetch(savedPinsQuery).then((data) => {
+        setPins(data);
+      });
+    }
+  }, [text, userId]);
 
   if (!user) {
     return <Spinner message='Loading profile...' />;
@@ -90,6 +107,7 @@ const UserProfile = ({}) => {
             </div>
           </div>
 
+          {/* Conditonally renders buttons */}
           <div className='text-center mb-7'>
             <button
               type='button'
@@ -108,7 +126,7 @@ const UserProfile = ({}) => {
             <button
               type='button'
               onClick={(e) => {
-                setText(e.target.Content);
+                setText(e.target.content);
                 setActiveBtn("saved");
               }}
               className={`${
@@ -119,6 +137,15 @@ const UserProfile = ({}) => {
               Saved
             </button>
           </div>
+          {pins?.length ? (
+            <div className='px-2'>
+              <MasonryLayout pins={pins} />
+            </div>
+          ) : (
+            <div className='flex justify-center font-bold items-center w-full text-xl mt-2'>
+              No Pins Found
+            </div>
+          )}
         </div>
       </div>{" "}
       {user.userName}
