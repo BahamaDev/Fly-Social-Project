@@ -10,7 +10,11 @@ const Pins = ({ user }) => {
     <>
       <div className='px-2 md:px-5'>
         <div className='bg-grey-50'>
-          <Navbar searchTerm={searchTerm} user={user} />
+          <Navbar
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            user={user}
+          />
         </div>
         <div className='h-full'>
           <Routes>

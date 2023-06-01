@@ -33,7 +33,7 @@ const Feed = () => {
   }, [categoryId]);
 
   if (loading) return <Spinner message='Updating your Feed!' />;
-  if (!pins.length) return <h2>No pins availale</h2>;
+  if (!pins?.length) return <h2>No pins availale</h2>;
   return <div> {pins && <MasonryLayout pins={pins} />}</div>;
 };
 
