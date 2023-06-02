@@ -17,7 +17,7 @@ const Pin = ({ pin: { postedBy, image, save, _id, destination } }) => {
   const user = fetchUser();
 
   // ADVANCED:This function checks postedBy _id of the image to see how many matches the current user from local storage. (Technically it should only return one match).  It returns an array with that one user, hence you can check its length. This value is used in the condition for the Save button below.
-  const alreadySaved = !!save?.filter((item) => item.postedBy._id === user.sub)
+  const alreadySaved = !!save?.filter((item) => item.postedBy._id === user?.sub)
     ?.length;
   //
   //
@@ -31,7 +31,7 @@ const Pin = ({ pin: { postedBy, image, save, _id, destination } }) => {
         .insert("after", "save[-1]", [
           {
             _key: uuidv4(),
-            userId: user.sub,
+            userId: user?.sub,
             postedBy: { _type: "postedBy", _ref: user.sub },
           },
         ])
@@ -115,7 +115,7 @@ const Pin = ({ pin: { postedBy, image, save, _id, destination } }) => {
                     : destination}
                 </a>
               )}
-              {postedBy?._id === user.sub && (
+              {postedBy?._id === user?.sub && (
                 <button
                   type='button'
                   onClick={(e) => {

@@ -8,6 +8,8 @@ import logowhite from "../assets/logowhite.png";
 import { client } from "../client";
 
 const Login = () => {
+  const clientId = process.env.REACT_APP_GOOGLE_API_TOKEN;
+
   const navigate = useNavigate();
   const onSuccess = (res) => {
     console.log("LOGIN SUCCESS.", res);
@@ -38,7 +40,7 @@ const Login = () => {
   const onFailure = (res) => {
     console.log("LOGIN FAILED", res);
   };
-  const clientId = process.env.REACT_APP_GOOGLE_API_TOKEN;
+  // const clientId = process.env.REACT_APP_GOOGLE_API_TOKEN;
 
   return (
     <>

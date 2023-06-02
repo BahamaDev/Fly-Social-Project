@@ -13,8 +13,8 @@ import { client } from "../client";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 
-const UserProfile = ({}) => {
-  const [user, setUser] = useState(null);
+const UserProfile = ({ user }) => {
+  const [theUser, setTheUser] = useState(null);
   const [pins, setPins] = useState(null);
   const [text, setText] = useState("Created"); // Will be either Created or Saved
   const [activeBtn, setActiveBtn] = useState("created"); // Will be either Created or Saved
@@ -24,7 +24,7 @@ const UserProfile = ({}) => {
   const { userId } = useParams();
   const randomImage =
     "https://source.unsplash.com/1600x900/?nature,photography,technology";
-  console.log(userId);
+  // console.log(userId);
 
   const activeBtnStyle =
     "bg-red-500 text-white font-bold rounded-full w-20 outline-none";
@@ -42,7 +42,7 @@ const UserProfile = ({}) => {
 
     client.fetch(query).then((data) => {
       console.log(data);
-      setUser(data[0]);
+      setTheUser(data[0]);
     });
   }, [userId]);
 
@@ -77,12 +77,12 @@ const UserProfile = ({}) => {
               className='w-full h-370 2xl:h-510 shadow-lg object-cover'
             />
             <img
-              src={user.image}
-              alt='user-pic'
+              src={theUser.image}
+              alt='theUser-pic'
               className='rounded-full w-20 h-20 mt-10 shadow-xl object-cover'
             />
             <h1 className='font-bold text-3xl text-center mt-3'>
-              {user.userName}
+              {theUser.userName}
             </h1>
 
             <div className='absolute top-0 z-1 right-0 p-3'>
@@ -148,7 +148,7 @@ const UserProfile = ({}) => {
           )}
         </div>
       </div>{" "}
-      {user.userName}
+      {theUser.userName}
     </div>
   );
 };

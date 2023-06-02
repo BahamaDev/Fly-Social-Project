@@ -10,7 +10,7 @@ import Pins from "./Pins";
 import { userQuery } from "../utils/data";
 import { fetchUser } from "../utils/fetchUser";
 
-const Home = () => {
+const Home = ({ clientId }) => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [user, setUser] = useState(null);
   const scrollRef = useRef(null);
@@ -18,10 +18,10 @@ const Home = () => {
   //Checks local storage for user.  If the user exists it parses and assigns. If not, it clears local storage.
   const userInfo = fetchUser();
 
-  console.log("User info from Storage", userInfo.sub);
+  // console.log("User info from Storage", userInfo.sub);
 
   useEffect(() => {
-    const query = userQuery(userInfo.sub);
+    const query = userQuery(userInfo?.sub);
 
     // console.log(query);
 
