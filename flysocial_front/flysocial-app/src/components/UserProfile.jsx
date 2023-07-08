@@ -82,7 +82,7 @@ const UserProfile = ({ user }) => {
               className='rounded-full w-20 h-20 mt-10 shadow-xl object-cover'
             />
             <h1 className='font-bold text-3xl text-center mt-3'>
-              {theUser.userName}
+              {theUser?.userName}
             </h1>
 
             <div className='absolute top-0 z-1 right-0 p-3'>
@@ -148,7 +148,7 @@ const UserProfile = ({ user }) => {
           )}
         </div>
       </div>{" "}
-      {theUser.userName}
+      {theUser?.userName}
     </div>
   );
 };
