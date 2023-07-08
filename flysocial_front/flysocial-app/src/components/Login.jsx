@@ -8,7 +8,9 @@ import logowhite from "../assets/logowhite.png";
 import { client } from "../client";
 
 const Login = () => {
-  const clientId = process.env.REACT_APP_GOOGLE_API_TOKEN;
+  // const clientId = process.env.REACT_APP_GOOGLE_API_TOKEN;
+  const clientId =
+    "897768674151-htcdj4vvf6upj92fem3q33hl86fe414b.apps.googleusercontent.com";
 
   const navigate = useNavigate();
   const onSuccess = (res) => {

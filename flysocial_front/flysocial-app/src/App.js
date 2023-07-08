@@ -12,7 +12,7 @@ const App = () => {
 
   useEffect(() => {
     function start() {
-      gapi.client.init({ clientId: clientId, scope: "" });
+      gapi.client.init({ client_id: clientId, scope: "" });
     }
 
     gapi.load("client: auth2", start);
