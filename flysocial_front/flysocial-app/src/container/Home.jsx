@@ -10,7 +10,7 @@ import Pins from "./Pins";
 import { userQuery } from "../utils/data";
 import { fetchUser } from "../utils/fetchUser";
 
-const Home = ({ clientId }) => {
+const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [user, setUser] = useState(null);
   const scrollRef = useRef(null);
