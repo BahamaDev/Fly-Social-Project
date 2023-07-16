@@ -22,15 +22,10 @@ const Home = () => {
 
   useEffect(() => {
     const query = userQuery(userInfo?.sub);
-
     // console.log(query);
-
-    // userInfo && console.log("User on load", userInfo.sub);
-
     client.fetch(query).then((data) => {
-      // console.log("Data at", data);
       setUser(data[0]);
-      console.log(data[0]);
+      // console.log(data[0]);
     });
   }, []);
 

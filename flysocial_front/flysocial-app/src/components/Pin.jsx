@@ -9,7 +9,7 @@ import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { fetchUser } from "../utils/fetchUser";
 
 const Pin = ({ pin: { postedBy, image, save, _id, destination } }) => {
-  console.log("Pin Fired", destination);
+  // console.log("Pin Fired", destination);
 
   const [postHovered, setPostHovered] = useState(false);
 
@@ -61,7 +61,7 @@ const Pin = ({ pin: { postedBy, image, save, _id, destination } }) => {
           alt='user-post'
           className='rounded-lg w-full'
         />
-        {/* This stylin, div, and functionality only happens on hover */}
+        {/* This styling, div, and functionality only happens on hover */}
         {postHovered && (
           <div
             className='absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50'

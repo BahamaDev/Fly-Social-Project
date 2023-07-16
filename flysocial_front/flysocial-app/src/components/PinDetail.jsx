@@ -190,7 +190,6 @@ const PinDetail = ({ user }) => {
             {/*  */}
           </div>
         </div>
-        PinDetail
       </div>
       {/* Renders related pins at the bottom. */}
       {pins?.length > 0 ? (

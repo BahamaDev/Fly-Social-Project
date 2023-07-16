@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-family: 'Lato', sanserif;
-} */
+body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* font-family: 'Lato', sanserif; */
+}
 
 .hide-scrollbar::-webkit-scrollbar{
   display: none;

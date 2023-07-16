@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import shareVideo from "../assets/share.mp4";
 import jwt_decode from "jwt-decode";
 import logowhite from "../assets/logowhite.png";
+import flylogowhite2 from "../assets/flylogowhite2.png";
 import { client } from "../client";
 
 const Login = () => {
@@ -40,7 +41,6 @@ const Login = () => {
   const onFailure = (res) => {
     console.log("LOGIN FAILED", res);
   };
-  // const clientId = process.env.REACT_APP_GOOGLE_API_TOKEN;
 
   return (
     <>
@@ -57,7 +57,7 @@ const Login = () => {
           />
           <div className='absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay '>
             <div className='p-5'>
-              <img src={logowhite} width='130px' alt='logo' />
+              <img src={flylogowhite2} width='230px' alt='logo' />
             </div>
 
             <div className='shadow-2xl'>

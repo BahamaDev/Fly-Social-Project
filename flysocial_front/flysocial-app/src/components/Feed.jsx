@@ -24,10 +24,9 @@ const Feed = () => {
     } else {
       // This query fetches all pins for that user.
       client.fetch(feedQuery).then((data) => {
-        console.log(data);
+        // console.log(data);
         setPins(data);
         setLoading(false);
-        // console.log(loading);
       });
     }
   }, [categoryId]);
