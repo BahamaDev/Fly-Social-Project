@@ -5,7 +5,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { Link, Route, Routes, useActionData } from "react-router-dom";
 import { Sidebar, UserProfile, Login } from "../components";
 import { client } from "../client";
-import logo from "../assets/logo.png";
+import flylogoblack from "../assets/flylogoblack.png";
 import Pins from "./Pins";
 import { userQuery } from "../utils/data";
 import { fetchUser } from "../utils/fetchUser";
@@ -48,7 +48,7 @@ const Home = () => {
               onClick={() => setToggleSidebar(true)}
             />
             <Link to='/'>
-              <img src={logo} alt='logo' className='w-28' />
+              <img src={flylogoblack} alt='logo' className='w-28' />
             </Link>
 
             <Link to={`user-profile/${user?._id}`}>

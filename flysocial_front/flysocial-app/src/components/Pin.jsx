@@ -101,13 +101,13 @@ const Pin = ({ pin: { postedBy, image, save, _id, destination } }) => {
               )}
             </div>
 
-            <div className='flex justify-between  items-center gap-2 w-full'>
+            <div className='flex justify-between text-base items-center gap-2 w-full'>
               {destination && (
                 <a
                   href={destination}
                   target='_blank'
                   rel='noreferrer'
-                  className='bg-white flex items-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded full opacity-70 hover:100 hover:shadow-md'
+                  className='bg-white flex items-center gap-2 text-black text-xs font-bold p-2 pl-4 pr-4 rounded full opacity-70 hover:100 hover:shadow-md'
                 >
                   <BsFillArrowUpRightCircleFill />
                   {destination.length > 15

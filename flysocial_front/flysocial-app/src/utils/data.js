@@ -72,22 +72,22 @@ export const categories = [
   {
     name: "cars",
     image:
-      "https://i.pinimg.com/750x/eb/47/44/eb4744eaa3b3ccd89749fa3470e2b0de.jpg",
+      "https://i.pinimg.com/564x/34/5f/48/345f48284748c14be71e4173367cbcd3.jpg",
   },
   {
     name: "fitness",
     image:
-      "https://i.pinimg.com/236x/25/14/29/251429345940a47490cc3d47dfe0a8eb.jpg",
+      "https://i.pinimg.com/564x/a4/41/9a/a4419a2a6bcf4ebb074880f337a707ae.jpg",
   },
   {
     name: "wallpaper",
     image:
-      "https://i.pinimg.com/236x/03/48/b6/0348b65919fcbe1e4f559dc4feb0ee13.jpg",
+      "https://i.pinimg.com/564x/b3/78/7a/b3787acab53ff86528de9abd1f3c8d75.jpg",
   },
   {
     name: "websites",
     image:
-      "https://i.pinimg.com/750x/66/b1/29/66b1296d36598122e6a4c5452b5a7149.jpg",
+      "https://i.pinimg.com/564x/e6/87/0e/e6870e91dd16984a576be63b2a9c31fa.jpg",
   },
   {
     name: "photo",
@@ -122,12 +122,12 @@ export const categories = [
   {
     name: "cats",
     image:
-      "https://i.pinimg.com/236x/6c/3c/52/6c3c529e8dadc7cffc4fddedd4caabe1.jpg",
+      "https://th-thumbnailer.cdn-si-edu.com/bZAar59Bdm95b057iESytYmmAjI=/1400x1050/filters:focal(594x274:595x275)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/95/db/95db799b-fddf-4fde-91f3-77024442b92d/egypt_kitty_social.jpg",
   },
   {
     name: "dogs",
     image:
-      "https://i.pinimg.com/236x/1b/c8/30/1bc83077e363db1a394bf6a64b071e9f.jpg",
+      "https://i.pinimg.com/564x/a4/51/fb/a451fb04885f4b8187c352fdc3336357.jpg",
   },
   {
     name: "others",
