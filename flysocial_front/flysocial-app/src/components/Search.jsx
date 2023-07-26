@@ -10,6 +10,7 @@ const Search = ({ searchTerm }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    //Queries the data based on the search term, then sets the response to pins.
     if (searchTerm) {
       const query = searchQuery(searchTerm.toLowerCase());
 

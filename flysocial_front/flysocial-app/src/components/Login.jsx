@@ -6,6 +6,7 @@ import shareVideo from "../assets/share.mp4";
 import jwt_decode from "jwt-decode";
 import logowhite from "../assets/logowhite.png";
 import flylogowhite2 from "../assets/flylogowhite2.png";
+import logonewwhite from "../assets/logonewwhite.png";
 import { client } from "../client";
 
 const Login = () => {
@@ -57,7 +58,7 @@ const Login = () => {
           />
           <div className='absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay '>
             <div className='p-5'>
-              <img src={flylogowhite2} width='230px' alt='logo' />
+              <img src={logonewwhite} width='330px' alt='logo' />
             </div>
 
             <div className='shadow-2xl'>
