@@ -17,4 +17,4 @@ This app operates very similar to Pinterest.  Login in using a Google account.  
 
 ## Developer's Note:
 
-It took me a while but this was a very rewarding projec to complete. I LOVED workin on this, because I gleaned significant insight on how popular social media applications work. I also gained a deeper understanding of headless CMSs, and different authentication tools work. Now on to the next one!  
+It took me a while but this was a very rewarding project to complete. I LOVED working on this, because I gleaned significant insight on how popular social media applications work. I also gained a deeper understanding of React component structures and libraries, headless CMSs, and how different authentication tools work. All in all a good project. Now on to the next one!  
